@@ -11,7 +11,7 @@ module.exports = function(app) {
     failureRedirect: '/'
   }), (req, res) => {
 
-    res.redirect("/users");
+    res.redirect("/dashboard");
 
   });
 
@@ -24,7 +24,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.redirect("/login");
+        res.redirect("/dashboard");
       })
       .catch(err => {
         res.status(401).json(err);

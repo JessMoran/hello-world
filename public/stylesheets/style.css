@@ -54,3 +54,8 @@ body {
 .text-orange {
   color: #FFB128 !important;
 }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}

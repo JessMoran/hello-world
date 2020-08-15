@@ -25,7 +25,7 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/login");
+      res.redirect("/users");
     }
     res.render(path.join(__dirname, "../views/signup.handlebars"));
   });
@@ -40,8 +40,9 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/events.handlebars"));
   });
 
+
   app.get("/resources/:id", isAuthenticated, (req, res) => {
-    const resources = { videos: [], books: [], courses: [] }
+    const resources = { videos: [], books: [], courses: [], name: req.user.email }
     //Find all videos
     db.video.findAll({
       where: {

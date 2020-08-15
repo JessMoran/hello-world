@@ -4,7 +4,7 @@
     <div class="w-4/5 p-2 text-center">
 
       <!-- Navbar -->
-      {{> navbar user = name  }}
+      {{> navbar user = data.name  }}
 
       <div class="mt-12 text-left ml-8">
         <h3 class="text-pink font-bold text-xl">Videos</h3>
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Right menu -->
-    {{> side-bar  }}
+    {{> side-bar user = data.name }}
 
   </div>
 </main>
